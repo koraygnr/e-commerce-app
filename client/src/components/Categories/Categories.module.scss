@@ -1,0 +1,62 @@
+@import "../../scss/variables";
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    .colLeft {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .colMid {
+        display: flex;
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .colRight {
+        display: flex;
+        position: relative;
+        flex: 2;
+        overflow: hidden;
+
+    }
+
+    .col {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        .img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s;
+            
+            &:hover {
+                transform: scale(1.2);
+            }  
+        }
+
+        .title {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            width: 100%;
+            color: white;
+            font-size: 3rem;
+            line-height: 4rem;
+        }
+    }
+}
+
+

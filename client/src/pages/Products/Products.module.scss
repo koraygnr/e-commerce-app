@@ -1,0 +1,54 @@
+@import "../../scss/variables";
+
+.products {
+    display: flex;
+    margin: 2rem auto;
+
+
+    .left {
+        flex: 1;
+        position: sticky;
+        top: 50px;
+        height: 100%;
+        margin-top: 10px;
+
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .inputItem {
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                margin-bottom: 1rem;
+            }
+
+            label {
+                padding-top: 1px;
+                margin-left: 8px;
+            }
+        }
+
+
+    }
+    
+    .right {
+        flex: 3;
+
+        .categoryTitle {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+
+            .titleIcon {
+                width: 18px;
+            }
+        }
+    }
+
+
+}
+

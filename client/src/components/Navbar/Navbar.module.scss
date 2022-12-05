@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin: 0 auto;
+
+        .left {
+
+            .categoryList {
+                display: flex;
+                gap: 1rem;
+
+            }
+        }
+
+        .center {
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+
+        .right {
+            .menuList {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .cartIcon {
+                    background-color: white;
+                }
+
+                .cartModal {
+
+                }
+
+            }
+        }
+    
+}

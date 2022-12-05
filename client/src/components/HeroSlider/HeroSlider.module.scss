@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .sliderItem {
+        height: calc(100vh - 18rem);
+        width: 100%;
+
+        .sliderImg {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

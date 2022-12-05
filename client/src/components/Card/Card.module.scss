@@ -1,0 +1,71 @@
+@import "../../scss/variables";
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+
+
+    .images {
+        position: relative;
+        height: 400px;
+        width: 100%;
+        margin-bottom: 1rem;
+        overflow: hidden;
+
+        .cardImg {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.4s;
+
+            &:hover {
+                opacity: 0;
+            }
+        }
+        .cardImg2 {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+
+        }
+
+        .isNewSeason {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            padding: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: $white;
+            color: $light-blue;
+            z-index: 0;
+        }
+
+    }
+
+    .cardTitle {
+        font-size: 1.125rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+    }
+    .prices {
+        display: flex;
+        gap: 1rem;
+
+        .oldPrice {
+            text-decoration: line-through;
+            color: $gray;
+        }
+        .price {
+            font-weight: 500;
+        }
+    }
+        
+    
+}
