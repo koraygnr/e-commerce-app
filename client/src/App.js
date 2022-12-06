@@ -1,4 +1,3 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import { ChakraProvider } from '@chakra-ui/react'
 import Home from './pages/Home/Home';
@@ -7,15 +6,12 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
-
 const Layout = () => {
   return (
     <ChakraProvider>
-    <div className='mx-auto'>
       <Navbar />
       <Outlet />
       <Footer />
-    </div>
     </ChakraProvider>
   )
 }

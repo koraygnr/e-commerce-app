@@ -73,11 +73,7 @@ function Categories() {
             </div>
           </div>
         )}
-
-
     </>
-
-
   )
 }
 

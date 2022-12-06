@@ -1,9 +1,13 @@
 @import "../../scss/variables";
 
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     background-color: $blue;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     color: white;
     width: 220px;
     transition: all 0.4s;

@@ -1,39 +1,101 @@
 @import "../../scss/variables";
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    margin: 0 auto;
+@include container {
 
-        .left {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        margin: 0 auto;
 
-            .categoryList {
-                display: flex;
-                gap: 1rem;
-
-            }
-        }
-
-        .center {
-            .logo {
-                font-size: 1.5rem;
-                font-weight: 600;
-            }
-        }
-
-        .right {
-            .menuList {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-
-                .cartIcon {
-                    background-color: white;
-                }
-
-            }
+        @include breakpoint(sm) {
+            padding: 0 1rem 0 1rem;
         }
     
+            .left {
+
+                .categoryList {
+                    display: flex;
+                    gap: 1rem;
+    
+                    @include breakpoint(lg) {
+                        display: none;
+                    }
+    
+    
+                }
+    
+                .dropMenu {
+                    display: none;
+                    @include breakpoint(lg) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                }
+            }
+    
+            .center {
+                .logo {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+            }
+    
+            .right {
+                .menuList {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+    
+                    .link {
+                        @include breakpoint(lg) {
+                            display: none;
+                        }
+                    }
+                    
+                    .deneme {
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .cartButton {
+                            position: relative;
+    
+                            .cartQuantity {
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                top: -9px;
+                                right: -9px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: $light-blue;
+                                color: white;
+                                border-radius: 100%;
+                                font-size: 0.75rem;
+        
+                            }
+    
+                        } 
+                    }
+                    .menuIcon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
+                }
+            }
+        
+    }
+
+
 }
+
+
+

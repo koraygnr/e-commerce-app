@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function Footer() {
   return (
-    <div className={`${styles.wrapper} container`}>
+    <div className={styles.container}>
       {/* Top Footer */}
       <div className={styles.topFooter}>
         <div className={styles.col}>

@@ -7,12 +7,21 @@
     height: 600px;
     overflow: hidden;
 
+    @include breakpoint(md) {
+        flex-direction: column;
+
+    }
+
     .colLeft {
         display: flex;
         position: relative;
         flex-direction: column;
         flex: 1;
         overflow: hidden;
+
+        @include breakpoint(md) {
+            flex-direction: row;  
+        }
     }
 
     .colMid {
@@ -20,6 +29,10 @@
         position: relative;
         flex: 1;
         overflow: hidden;
+
+        @include breakpoint(md) {
+            flex: 2;
+        }
     }
 
     .colRight {
@@ -55,6 +68,11 @@
             color: white;
             font-size: 3rem;
             line-height: 4rem;
+
+            @include breakpoint(lg) {
+                font-size: 2rem;
+            }
+
         }
     }
 }

@@ -1,0 +1,78 @@
+//  G o o g l e  F o n t s
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+$Montserrat: "Montserrat", sans-serif;
+
+//  C o l o r s  
+
+$gray: #B2B2B2;
+$light-gray: #EAEAEA;
+$dark-gray: #3C4048;
+$black: #000;
+$white: #fff;
+
+$purple: #745C97;
+$blue: #4649FF;
+$light-blue: #2879fe;
+
+
+// B r e a k p o i n t s
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+
+@mixin breakpoint($point) {
+    @if $point == sm {
+        @media (max-width: $sm){
+            @content;
+        }
+    }
+    @if $point == md {
+        @media (max-width: $md){
+            @content;
+        }
+    }
+    @if $point == lg {
+        @media (max-width: $lg){
+            @content;
+        }
+    }
+    @if $point == xl {
+        @media (max-width: $xl){
+            @content;
+        }
+    }
+    @if $point == xxl {
+        @media (min-width: $xl){
+            @content;
+        }
+    }
+}
+
+//  C o n t a i n e r
+
+@mixin container {
+    .container {
+        width: 100%;
+        @content;
+        
+        @include breakpoint(xxl) {
+            padding: 0 6rem 0 6rem;
+        }
+        @include breakpoint(xl) {
+            padding: 0 5rem 0 5rem;
+        }
+        @include breakpoint(lg) {
+            padding: 0 4rem 0 4rem;
+        }
+        @include breakpoint(md) {
+            padding: 0 1rem 0 1rem;
+        }
+        @include breakpoint(sm) {
+            padding: 0 0 0 0;
+        }
+
+    }
+
+}

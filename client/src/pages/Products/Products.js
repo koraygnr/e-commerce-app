@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom"
 import List from '../../components/List/List'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../components/Loading/Loading'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 function Products() {
 
@@ -28,7 +27,7 @@ function Products() {
   }
 
   return (
-    <div className={`${styles.products} container`}>
+    <div className={styles.container}>
       {/*  L E F T  S I D E   */}
       <div className={styles.left}>
         <div className={styles.filterItem}>
@@ -88,7 +87,6 @@ function Products() {
       </div>
       {/*  R I G H T  S I D E  */}
       <div className={styles.right}>
-        <div className={styles.categoryTitle}><ArrowForwardIosIcon className={styles.titleIcon} />{categoryId === 1 ? "Women" : categoryId === 2 ? "Men" : categoryId === 3 ? "Accessories" : ""} Products </div>
       <List 
         categoryId={categoryId} 
         maxPrice={maxPrice}

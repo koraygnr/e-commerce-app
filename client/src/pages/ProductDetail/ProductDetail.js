@@ -24,7 +24,9 @@ function ProductDetail() {
     {  isLoading 
         ? <Loading /> 
         : data && (
-      <div className={`${styles.productDetail} container`}>
+      <div className={styles.container}>
+      <div className={styles.productDetail}>
+        {/*  L E F T  S I D E   */}
         <div className={styles.left}>
           <div className={styles.images}>
             <img 
@@ -42,7 +44,7 @@ function ProductDetail() {
             alt="" />
           </div>
         </div>
-
+        {/*  R I G H T  S I D E   */}
         <div className={styles.right}>
           <h2>{data.attributes.title}</h2>
           <p className={styles.price}>$ {data.attributes.price}</p>
@@ -71,6 +73,7 @@ function ProductDetail() {
           </button>
           </div>
         </div>
+      </div>
       </div>
       ) 
     }   

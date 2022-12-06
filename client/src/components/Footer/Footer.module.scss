@@ -1,7 +1,7 @@
 @import "../../scss/variables";
 
 
-.wrapper {
+@include container {
     margin: 0 auto;
 
     .topFooter{
@@ -27,6 +27,12 @@
 
             p {
                 text-align: justify;
+                text-overflow:ellipsis;
+                overflow:hidden;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+
             }
 
         }

@@ -1,6 +1,6 @@
 @import "../../scss/variables";
 
-.wrapper {
+.contacts {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,25 +12,40 @@
 
     .textContent {
         p {
-            color: white;
+            color: $white;
         }
     }
 
-    input {
-        height: 2rem;
-        padding: 0.5rem;
-        font-size: 0.875rem;
-        border-radius: 6px 0 0 6px;
-
+    .input{
+        input {
+            height: 2rem;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            border-radius: 6px 0 0 6px;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+        
+        @include breakpoint(sm){
+            display: none;
+        }
     }
-
+    
     button {
         height: 2rem;
         padding: 0 0.5rem;
         font-size: 0.875rem;
         border-radius: 0px 6px 6px 0;
-        background-color: black;
-        color: white;
+        background-color: $black;
+        color: $white;
+    }
+
+    .social {
+        display: flex;
+        gap: 1rem;
+        color: $white;
     }
 
 }

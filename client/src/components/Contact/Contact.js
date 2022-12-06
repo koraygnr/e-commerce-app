@@ -7,27 +7,25 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 function Contact() {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.contacts}>
         <div className={styles.textContent}>
-        <p>BE IN TOUCH WITH US:</p>
+          <p>BE IN TOUCH WITH US:</p>
         </div>
-        <div>
-        <input
-        className='hidden md:inline focus:outline-0 ' 
-        type="email"
-        placeholder='Enter your e-mail '
-         />
-         <button 
-         className='hidden md:inline'
-         >Join Us</button>
+        <div className={styles.input}>
+          <input
+          type="email"
+          placeholder='Enter your e-mail '
+          />
+          <button 
+          className='hidden md:inline'
+          >Join Us</button>
         </div>
-        <div className='flex gap-3 text-white'>
+        <div className={styles.social}>
             <FacebookIcon />
             <TwitterIcon />
             <InstagramIcon />
             <GoogleIcon />
         </div>
-
     </div>
   )
 }

@@ -1,9 +1,8 @@
 @import "../../scss/variables";
 
-.products {
+@include container {
     display: flex;
     margin: 2rem auto;
-
 
     .left {
         flex: 1;
@@ -31,8 +30,6 @@
                 margin-left: 8px;
             }
         }
-
-
     }
     
     .right {
@@ -48,7 +45,5 @@
             }
         }
     }
-
-
 }
 

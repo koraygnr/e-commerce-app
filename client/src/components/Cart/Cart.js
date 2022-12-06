@@ -45,8 +45,8 @@ function Cart() {
         }
 
         <div className={styles.totalPrice}>
-        <span>SUBTOTAL</span>
-        <span>$ {totalPrice()}</span>
+            <span>SUBTOTAL</span>
+            <span>$ {totalPrice()}</span>
         </div>
         <Button w="full">PROCEED TO CHECKOUT</Button>
         <span 
