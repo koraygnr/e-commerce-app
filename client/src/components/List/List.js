@@ -9,7 +9,7 @@ function List( { categoryId, maxPrice, sort, subCats }) {
   const { data, isLoading } = useFetch(`/products?populate=*&[filters][categories][id]=${categoryId}${subCats.map( item => `&[filters][sub_categories][id][$eq]=${item}`)}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`)
 
   return (
-    <div className={styles.list}>
+      <div className={styles.list}>
         {      
             isLoading
             ? <Loading />
@@ -17,7 +17,7 @@ function List( { categoryId, maxPrice, sort, subCats }) {
                 <Card data={item} key={item.id}/>
             )) 
         }
-    </div>
+      </div>
   )
 }
 
