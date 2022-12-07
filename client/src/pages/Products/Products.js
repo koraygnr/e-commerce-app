@@ -11,10 +11,7 @@ function Products() {
   const [ maxPrice, setMaxPrice ] = useState(300)
   const [ sort, setSort ] = useState("asc")
   const [ selectedSubCats, setSelectedSubCats ] = useState([])
-
-  const { data, isLoading } = useFetch(`/sub-categories?/filters[categories][id][$eq]=${categoryId}`)
-
-  console.log(data)
+  const { data, isLoading } = useFetch(`/sub-categories?&[filters][categories][id]=${categoryId}`)
 
   function handleChange (e) {
     const value = e.target.value
