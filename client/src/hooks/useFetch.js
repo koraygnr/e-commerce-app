@@ -5,22 +5,28 @@ function useFetch(url) {
 
   const [ data, setData ] = useState(null)
   const [ isLoading, setIsLoading ] = useState(true)
-  const [ error, setError ] = useState(null)
   const headers = {
     Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
   }
 
   useEffect( () => {
     const fetchData = async () => {
-      await axios.get(`${process.env.REACT_APP_API_URL}${url}`, {headers})
-      .then(res => setData(res.data.data))
-      .catch( err => setError(err))
-      .finally( !error ? setIsLoading(false) : console.log(error) )
+      try {
+        setIsLoading(true)
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}${url}`, {headers})
+        setData(res.data.data)
+      }
+      catch(err) {
+        console.log(err.message)
+      }
+      finally {
+        setIsLoading(false)
+      }
     }
     fetchData()
   },[url])
     
-  return { data, isLoading, error}
+  return { data, isLoading }
 }
 
 export default useFetch
