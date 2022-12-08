@@ -9,14 +9,36 @@ import { useDispatch } from "react-redux"
 import { addToCart } from "../../redux/cartSlice/cartSlice"
 import Button from '../../components/Buttons/Button';
 import LocationBar from '../../components/LocationBar/LocationBar';
+import { useToast } from '@chakra-ui/react'
+
 
 function ProductDetail() {
 
   const dispatch = useDispatch()
   const id = useParams().id
+  const toast = useToast()
   const { data, isLoading } = useFetch(`/products/${id}?populate=*`)
   const [selectedImg, setSelectedImg ] = useState("img")
   const [ quantity, setQuantity ] = useState(1)
+
+  function handleSubmit() {
+    dispatch(addToCart(
+      {
+        id: data.id,
+        title: data.attributes.title,
+        desc: data.attributes.desc,
+        price: data.attributes.price,
+        img: data.attributes.img.data.attributes.url,
+        quantity
+      }))
+      toast({
+        title: 'Successful',
+        description: "The product has been added to your cart",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      })
+  }
   
   return (
     <>
@@ -56,16 +78,7 @@ function ProductDetail() {
           </div>
           <div className={styles.buttons}>
             <Button
-            onClick={ () => dispatch(addToCart(
-              {
-                id: data.id,
-                title: data.attributes.title,
-                desc: data.attributes.desc,
-                price: data.attributes.price,
-                img: data.attributes.img.data.attributes.url,
-                quantity
-              }
-            ))}
+            onClick={ handleSubmit }
             ><AddShoppingCartIcon /> ADD TO CART </Button>
             <button 
             className={styles.addToWishList}>
